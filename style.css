@@ -1,0 +1,201 @@
+/*pagina index*/
+
+body {
+    background: rgb(255, 255, 255)
+}
+
+.card {
+    margin: 1%;
+}
+
+#conteudo {
+    margin-top: 10%;
+}
+
+#organico {
+    width: 5%;
+    height: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+h6 {
+    color: rgb(19, 151, 19);
+    width: 4%;
+    height: 4%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.d-flex {
+    width: 100%;
+    margin-top: 2%;
+    margin-right: 70%;
+}
+
+.categoria {
+    margin-top: 2%;
+    margin-left: 82%;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 50%;
+}
+
+#close {
+    width: 5%;
+    height: 50%;
+    float: left;
+    margin-left: 2%;
+}
+
+#img {
+    width: 100%;
+    height: 100%;
+}
+
+#buttonn {
+    margin-right: 20%;
+}
+
+#buttond {
+    width: 20%;
+    height: 20%;
+    float: right;
+}
+
+
+/*pagina index*/
+
+
+/*pagina Contato*/
+
+h2 {
+    margin-top: 3%;
+}
+
+.align-items-center {
+    margin: 3%;
+}
+
+#drop {
+    margin-left: 11%;
+}
+
+#pagamento {
+    margin-left: 30%;
+}
+
+#pagamentoa {
+    margin-top: 15%;
+}
+
+#coluna {
+    margin-top: 16%;
+}
+
+#buttondf {
+    width: 30%;
+    height: 20%;
+    margin-left: 20%;
+}
+
+#menu {
+    width: 10%;
+    height: 10%;
+    margin-left: 10%;
+}
+
+#dropdownMenu2 {
+    margin-left: 50%;
+}
+
+#preco {
+    margin-top: 10%;
+    color: rgb(51, 20, 223);
+}
+
+#p {
+    margin-top: 30%;
+}
+
+#buttonds {
+    float: right;
+    width: 4%;
+    height: 4%;
+    margin-top: 10%;
+    margin-right: 10%;
+}
+
+#buttondj {
+    float: right;
+    width: 4%;
+    height: 4%;
+    margin-top: 21%;
+    margin-right: 15%;
+}
+
+#iddd {
+    float: right;
+    width: 80px;
+    height: 80px;
+    margin-top: 4%;
+    margin-right: 40%;
+}
+
+#pagamentoo {
+    float: right;
+    margin-top: 30%;
+    margin-right: 50%;
+    width: 60%;
+    height: 60%;
+}
+
+#dropf {
+    margin-left: 0%;
+}
+
+#tb {
+    margin-top: 10%;
+}
+
+tr {
+    display: block;
+    margin-right: 50%;
+    margin-top: 15%;
+}
+
+#row {
+    margin-top: 15%;
+}
+
+#dropdownMenuButton2ggg {
+    float: right;
+    margin-right: 0%;
+    margin-top: 70%;
+}
+
+#inputPassword6u {
+    width: 30%;
+    height: 30%;
+}
+
+#ffffff {
+    float: right;
+}
+
+#closef {
+    float: right;
+    width: 15%;
+    height: 15%;
+}
+
+#carrinhod {
+    margin-left: 0%;
+}
+
+#mgf {
+    width: 100%;
+    height: 100%;
+}
