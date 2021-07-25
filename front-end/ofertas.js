@@ -31,7 +31,7 @@ function fazGet(url, nome) {
 }
 
 function retornar(produtos) {
-    const meuHtml = `
+    return `
    
     <div class="card ">
     <img src="img/alface.png " class="card-img-top " alt="... ">
@@ -45,11 +45,6 @@ function retornar(produtos) {
         
     
 `
-    console.log(produtos)
-    return meuHtml;
-
-
-
 }
 
 function main() { //pode ser qualquer nome
@@ -57,14 +52,13 @@ function main() { //pode ser qualquer nome
         .then(data => {
             let meuHtml = "";
 
-            for (const product of data.mensage) {
+            for (const product of data) {
                 console.log(product)
                 meuHtml += retornar(product);
             }
-            let card = document.getElementById("card")
+            let card = document.getElementById("conteudo")
+            console.log(meuHtml)
             card.innerHTML = meuHtml;
-
-
         })
 
 
