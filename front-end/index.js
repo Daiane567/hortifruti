@@ -30,7 +30,7 @@ function fazGet(url, nome) {
     return request.responseText
 }
 
-function retornar(produtos) {
+function retornar(produtos) { //get que passa o id do vendedor
     const meuHtml = `
    
                 <div class="card mb-3" style="max-width: 80%;">
