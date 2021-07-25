@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <tittle>Exemplo</tittle>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+        $(function() {
+            $("#criar-modal").click(function() {
+                $("#modal-alerta").modal();
+            });
+        });
+    </script>
+    <style>
+        .modal-header {
+            background: #f7f7f7;
+            color: rgb(122, 122, 122);
+        }
+        
+        .card-img-top {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #botaoo {
+            background: #7CFC00;
+            width: 70%;
+            margin-left: 3%;
+        }
+        
+        #botaoo {
+            float: right;
+            margin-right: 0%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button class="btn btn-primary" id="criar-modal">Acionar Modal</button>
+
+    <div class="modal" id="modal-alerta">
+        <div class="modal-dialog">
+            <div class="modal-header">
+
+                <!-- Cabeçalho do Modal -->
+                <div class="modal-header">
+
+                    <h2>Confirmação</h2>
+                    <p>Escolha a quantidade desse item</p>
+                    <div class="row g-0">
+                        <div class="col-sm-6 col-md-6"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa0I0eEe-gPBvfHzgCBSf-X-8WqD91612ePw&usqp=CAU" class="card-img-top" alt="..."></div>
+                        <div class="col-6 col-md-2">Batata kg</div>
+                        <div class="col-6 col-md-4">
+                            <form id="frmNumber">
+                                <div>
+                                    <label for="numero">Informe a quantidade:</label>
+                                    <input type="number" id="numero" name="numero" min="0" max="200">
+                                </div>
+
+                            </form>
+                            <p id="resultado">
+                                <div>
+                                    <label for="preco" class="col-form-label">R$2,30</label>
+                                </div>
+
+
+                                <script>
+                                    document.getElementById("frmNumber").onsubmit = function() {
+                                        let frmNr = document.getElementById('frmNumber').elements;
+                                        document.getElementById("resultado").innerHTML = "Você digitou: " + frmNr['numero'].value;
+                                        return false;
+                                    };
+                                </script>
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn " id="botaoo"> Adicionar ao carrinho </button>
+
+                    <button class="btn " id="botaooo" data-dismiss="modal">voltar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+</body>
+
+</html>
