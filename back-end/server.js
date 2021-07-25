@@ -13,10 +13,10 @@ var produtos = [];
 
 
 
-app.get('/produtos', (req, res) => {
+app.get('/produtos/:idVendedor', (req, res) => {
 
 
-    const id = parseInt(req.query['id'], 10)
+    const id = parseInt(req.params['idVendedor'], 10)
     var cestoRoupa = []
     for (var i = 0; i < produtos.length; i++) {
         console.log(produtos[i])
@@ -31,18 +31,22 @@ app.get('/produtos', (req, res) => {
     return res.json({ mensage: cestoRoupa })
 })
 
+app.get('/ofertas', (req, res, next) => {
+
+    next(res.json(produtos))
+})
 
 
-app.post('/produtos', (req, res) => {
-    const balinha = parseInt(req.body.vendedor.id, 10)
+app.post('/produtos/:idVendedor', (req, res) => {
+    const idVendedor = parseInt(req.params['idVendedor'], 10)
     var vendedor;
 
     for (var i = 0; i < usuario.length; i++) {
         console.log(usuario[i])
-        console.log(`id do usuario ${usuario[i].id} paramito que o usuario procura ${balinha}`)
-        if (usuario[i].id === balinha) {
+        console.log(`id do usuario ${usuario[i].id} paramito que o usuario procura ${idVendedor}`)
+        if (usuario[i].id === idVendedor) {
             // achou!    
-            console.log(balinha)
+            console.log(idVendedor)
             vendedor = usuario[i];
         }
 

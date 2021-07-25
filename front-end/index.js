@@ -91,7 +91,7 @@ function retornar(produtos) {
 }
 
 function main() { //pode ser qualquer nome
-    fetch(`http://localhost:3000/produtos`).then(balinha => balinha.json())
+    fetch(`http://localhost:3000/ofertas`).then(balinha => balinha.json())
         .then(data => {
             let meuHtml = "";
 

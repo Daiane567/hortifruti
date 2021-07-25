@@ -25,7 +25,7 @@ function login() {
         })
         .then(data => {
             localStorage.setItem("id", data.id);
-            console.log(window.localStorage.getItem("id", data.id));
+            console.log(localStorage.getItem("id"));
             window.location.href = "./Contatos.html"
             console.log(data); // JSON data parsed by `data.json()` call
 
