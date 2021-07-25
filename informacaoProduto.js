@@ -39,8 +39,8 @@ function cadastrar() {
 
         })
         .then(data => {
-            window.location.href = "file:///C:/Users/dr465/projetosPUC/Hortifruti/Contatos.html?id = " + data.id
             console.log(data);
+
 
         })
         .catch((error) => {

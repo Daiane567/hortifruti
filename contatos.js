@@ -24,7 +24,7 @@ function vendedor() {
 
 
 
-    putData(`http://localhost:3000/usuarioss`, {
+    putData(`http://localhost:3000/usuarios`, {
 
             "id": id,
             "nomeVendedor": nomeVendedor,
@@ -34,6 +34,7 @@ function vendedor() {
             "pagamento": pagamento
         })
         .then(data => {
+            window.location.href = "./informacoesProduto.html?id = " + data.id
 
             console.log(data); // JSON data parsed by `data.json()` call
 

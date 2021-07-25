@@ -26,8 +26,7 @@ function login() {
         .then(data => {
             localStorage.setItem("id", data.id);
             console.log(window.localStorage.getItem("id", data.id));
-
-            window.location.href = "file:///C:/Users/dr465/projetosPUC/Hortifruti/informacoesProduto.html?id = " + data.id
+            window.location.href = "./Contatos.html?id = " + data.id
             console.log(data); // JSON data parsed by `data.json()` call
 
         })
@@ -56,7 +55,7 @@ function cadastro() {
 
 
     .then(data => {
-            window.location.href = "file:///C:/Users/dr465/projetosPUC/Hortifruti/login.html#paralogin"
+            window.location.href = "./login.html#paralogin"
 
             console.log(data); // JSON data parsed by `data.json()` call
 
