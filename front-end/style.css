@@ -6,10 +6,12 @@ body {
 
 .card {
     margin: 1%;
+    width: 50%;
+    width: 50%;
 }
 
 #conteudo {
-    margin-top: 10%;
+    margin-top: 1%;
 }
 
 #organico {
@@ -191,6 +193,12 @@ tr {
     height: 15%;
 }
 
+#closeff {
+    float: right;
+    width: 15%;
+    height: 15%;
+}
+
 #carrinhod {
     margin-left: 0%;
 }
@@ -198,4 +206,30 @@ tr {
 #mgf {
     width: 100%;
     height: 100%;
+}
+
+.modal-header {
+    background: #f7f7f7;
+    color: rgb(122, 122, 122);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+}
+
+#botaoo {
+    background: #7CFC00;
+    width: 70%;
+    margin-left: 3%;
+}
+
+#botaooo {
+    background: #fbfff7;
+    float: right;
+    margin-right: 0%;
+}
+
+#cor {
+    color: rgb(129, 129, 129);
 }

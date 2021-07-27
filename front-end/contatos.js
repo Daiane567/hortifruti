@@ -61,9 +61,12 @@ function retornar(produtos) {
                                       <div class="card-body" id="card">
                                           <h5 class="card-title">${produtos.nome} ${produtos.medidas}</h5>
                                           <p class="card-text">
-                                              <p id="nome"></p>>vendedor:${produtos.vendedor.nomeVendedor}   </p>
-                                          <p>Endereço: Fazenda Estancia São Geraldo</p>
-                                          <p>Cidade: Serra da Sauldade-MG</p>
+                                              <p id="nomeVendedor">vendedor:${produtos.vendedor.nomeVendedor} </p>
+                            
+                                          <p class="card-text " id="nomeVendedor">${produtos.vendedor.nomeVendedor}</p>
+                                          <p class="card-text " id="endereco">${produtos.vendedor.endereco}</p>
+                                          <p class="card-text " id="cidade">${produtos.vendedor.cidade}</p>
+
                                           <p>Obs:  ${produtos.descricao} </p>
   
                                           </p>

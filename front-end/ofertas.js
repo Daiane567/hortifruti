@@ -1,28 +1,3 @@
-/*let page = 1
-
-const getPosts = async() => {
-    const response = await fetch('http://localhost:3000/produto?nome=daiane')
-    return response.json()
-}
-
-const addPostsIntoDOM = async() => {
-    const posts = await getPosts()
-    const postsTemplate = posts.map(({ id, title, body }) => `
-        <div class="post">
-        <div class="number">${id}</dv>
-        <div class="post-info">
-        <h2 class="post-title">${title}</h2>
-        <p class="post-body">${body}</p>
-        </div>
-        </div>
-
-        `)
-    console.log(posts)
-    console.log(postsTemplate)
-}
-
-addPostsIntoDOM()*/
-
 function fazGet(url, nome) {
     let request = new XMLHttpRequest()
     request.open("GET", url, nome, false)
@@ -31,26 +6,56 @@ function fazGet(url, nome) {
 }
 
 function retornar(produtos) {
+
     return `
-   
+    
     <div class="card ">
     <img src="img/alface.png " class="card-img-top " alt="... ">
     <div class="card-body ">
+    <p class="card-text " " id="id">${produtos.id} </p>
         <h5 class="card-title " id="name">${produtos.nome} </h5>
-        <p class="card-text " id>${produtos.descricao} </p>
-        <p class="card-text "><small class="text-muted ">Last updated 3 mins ago</small></p>
-        <input type="image " id="buttond " src="img/carrinho.png " />
+        <p class="card-text " " id="preco">${produtos.preco} </p>
+        <p class="card-text " id="pagamentos">${produtos.vendedor.pagamento}</p>
+        <p class="card-text " id="nomeVendedor">${produtos.vendedor.nomeVendedor}</p>
+        <p class="card-text " id="endereco">${produtos.vendedor.endereco}</p>
+        <p class="card-text " id="cidade">${produtos.vendedor.cidade}</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${produtos.id}">
+  Launch demo modal
+</button>        
+        </div>
     </div>
-</div>
-        
     
+    <!-- Modal -->
+    <div class="modal fade" id="${produtos.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+ </div>   
 `
+
 }
+
+
 
 function main() { //pode ser qualquer nome
     fetch(`http://localhost:3000/ofertas`).then(balinha => balinha.json())
         .then(data => {
             let meuHtml = "";
+
 
             for (const product of data) {
                 console.log(product)
@@ -58,7 +63,7 @@ function main() { //pode ser qualquer nome
             }
             let card = document.getElementById("conteudo")
             console.log(meuHtml)
-            card.innerHTML = meuHtml;
+            card.innerHTML = ` <div class="card-group mb-12 " id="conteudo">${meuHtml}</div>`;
         })
 
 
@@ -66,79 +71,59 @@ function main() { //pode ser qualquer nome
 }
 main()
 
-/*async function getContent() {
-    try {
-        const response = await fetch('http://localhost:3000/produtos')
-        const data = await response.json()
-        show(data)
-    } catch (error) {
-        console.log(error)
+
+
+function voltar(produtos) {
+    for (var i = 0; i < produtos.length; i++) {
+        const quantidade = produtos[i]
+        if (quantidade < 1) {
+            return `
+            <div class="card-group mb-12 " id="conteudoo">
+        
+            <div class="card ">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ77jDZG9uuHUE17barcIW4C1Zk1M-Mr9vQ5g&usqp=CAU " class="card-img-top " alt="... ">
+            <div class="card-body ">
+                <h5 class="card-title " id="name">${produtos.nome} </h5>
+                <p class="card-text " " id="preco">${produtos.preco} </p>
+                <p class="card-text " id="pagamentos">${produtos.vendedor.pagamento}</p>
+                <p class="card-text " id="nomeVendedor">${produtos.vendedor.nomeVendedor}</p>
+                <p class="card-text " id="endereco">${produtos.vendedor.endereco}</p>
+                <p class="card-text " id="cidade">${produtos.vendedor.cidade}</p>
+                <a class="nav-link active" id="carrinhocompraa" aria-current="page" href="popup.html" title="Meus itens"> <input type="image" id="modal-alerta" src="img/carrinho.png" /></a>
+                <button class="btn btn-primary" id="criar-modal">Acionar Modal</button>
+
+                </div>
+            </div>
+            </div>
+                
+            
+        `
+
+
+        }
     }
+
 }
-getContent()
 
-function show(nome) {
-    let output = ''
 
-    for (const usuario of nome) {
-        console.log(usuario)
-        output += retornar(usuario);
-        output += `
-   <div class="container fluid">
-   <div class="col" id="conteudo">
-      <div class="container">
-           <div class="card mb-3" style="max-width: 80%;">
 
-               <div class="row g-0">
-                   <div class="col-md-4">
-                       <img src="img/beterraba.png" class="img-fluid rounded-start" id="mgf" alt="...">
-                   </div>
-                   <div class="col-md-8">
-                       <div class="row g-0">
-                           <div class="col-sm-6 col-md-7">
-                               <div class="card-body" id="card">
-                                   <h5 class="card-title">Beterraba UNDS</h5>
-                                   <p class="card-text">
-                                       <p id="nome"></p>>vendedor:${usuario.nome}   </p>
-                                   <p>Endereço: Fazenda Estancia São Geraldo</p>
-                                   <p>Cidade: Serra da Sauldade-MG</p>
-                                   <p>Obs: Aproximadamente 800gm</p>
+function mainn() { //pode ser qualquer nome
+    fetch(`http://localhost:3000/maisvendidos`).then(balinha => balinha.json())
+        .then(data => {
+            let meuHtml = "";
 
-                                   </p>
 
-                               </div>
-                           </div>
-                           <div class="col-6 col-md-2" id="coluna">
-                               <p> Remover:</p>
-                               <input type="image" id="buttondf" src="img/remover.png" />
+            for (const product of data) {
+                console.log(product)
+                meuHtml += retornar(product);
+            }
+            let card = document.getElementById("conteudoo")
 
-                           </div>
+            console.log(meuHtml)
+            card.innerHTML = meuHtml;
+        })
 
-                           <div class="col-6 col-md-3">
-                               <label for="inputPassword6" class="col-form-label" id="preco">R$ ${usuario.preco}  </label>
-                               <p id="p"> Quantidade:</p>
-                               <div class="dropdown" id="menu">
-                                   <button class="btn bg dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                   
-                                                                  </button>
-                                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                       <li><button class="dropdown-item" type="button">1</button></li>
-                                       <li><button class="dropdown-item" type="button">2</button></li>
-                                       <li><button class="dropdown-item" type="button">3</button></li>
-                                   </ul>
-                               </div>
 
-                           </div>
-                       </div>
 
-                   </div>
-               </div>
-           </div>  
-       </div>  
-   </div>
-</div>   
-
-`
-    }
-    document.querySelector('main').innerHTML = output
-}*/
+}
+mainn()
