@@ -33,16 +33,23 @@ app.get('/produtos/:idVendedor', (req, res) => {
 
 app.get('/ofertas', (req, res, next) => {
 
+
     next(res.json(produtos))
 })
 
+app.get('/maisvendidos', (req, res, next) => {
+
+
+    next(res.json(produtos))
+})
 
 app.post('/produtos/:idVendedor', (req, res) => {
     const idVendedor = parseInt(req.params['idVendedor'], 10)
     var vendedor;
 
     for (var i = 0; i < usuario.length; i++) {
-        console.log(usuario[i])
+        console.log(typeof usuario[i].id)
+        console.log(typeof idVendedor)
         console.log(`id do usuario ${usuario[i].id} paramito que o usuario procura ${idVendedor}`)
         if (usuario[i].id === idVendedor) {
             // achou!    
@@ -55,7 +62,7 @@ app.post('/produtos/:idVendedor', (req, res) => {
 
     const resultado = {
 
-        "id": req.body.id,
+        "id": produtos.length,
         "nome": req.body.nome,
         "preco": req.body.preco,
         "descricao": req.body.descricao,
@@ -76,41 +83,15 @@ app.post('/produtos/:idVendedor', (req, res) => {
     produtos.push(resultado);
 
     return res.json({ mensagem: "produto cadastrado com sucesso", resultado, id: id }).status(201);
-    console.log(resultado) //
+
 
 
 })
-
-/*app.put('/produtos', (req, res) => {
-    const idInformadoNoHtml = req.body.id
-    let indexProdutoAtualizado = -1;
-    for (var i = 0; i < produtos.length; i++) {
-        if (produtos[i].id === idInformadoNoHtml) {
-            indexProdutoAtualizado = i
-        }
-    }
-
-    if (indexProdutoAtualizado >= 0) {
-        const novasInformacoes = {
-            id: req.body.id,
-            nome: req.body.nome,
-            preco: req.body.preco,
-        };
-        produtos[indexProdutoAtualizado] = novasInformacoes;
-        return res.json({ mensagem: "produto atualizado com sucesso" }).status(200);
-
-    } else {
-        return res.status.json({ mensagem: "id do produto não encontrado" }).status(404);
-    }
-
-});*/
-
-app.put('/usuarioss', (req, res) => {
+app.put('/usuarios', (req, res) => {
     const idInformadoNoHtml = parseInt(req.body.id, 10) //parseInt faz com que o programa reconheça o numero do id 
     let indexProdutoAtualizado = -1;
     console.log(idInformadoNoHtml)
     console.log(usuario)
-
 
     for (var i = 0; i < usuario.length; i++) {
         if (usuario[i].id === idInformadoNoHtml) {
@@ -120,8 +101,8 @@ app.put('/usuarioss', (req, res) => {
 
     if (indexProdutoAtualizado >= 0) {
         const novasInformacoes = {
-            "id": req.body.id,
-            "nomeVendedor": req.body.nomevendedor,
+            "id": idInformadoNoHtml,
+            "nomeVendedor": req.body.nomeVendedor,
             "endereco": req.body.endereco,
             "cidade": req.body.cidade,
             "telefone": req.body.telefone,
@@ -168,8 +149,6 @@ app.post('/usuarios', (req, res) => {
         "nome": req.body.nome,
         "email": req.body.email,
         "senha": req.body.senha
-
-
     }
 
     usuario.push(resultad);
@@ -177,29 +156,5 @@ app.post('/usuarios', (req, res) => {
 
     res.json({ mensagem: "usuario cadastrado com sucesso", resultad, id: id, }).status(201);
 })
-
-/*app.get('/usuarios', (req, res) => {
-
-
-    const id = parseInt(req.query['id'], 10)
-    var cestoRoupa = []
-    for (var i = 0; i < produtos.length; i++) {
-        console.log(produtos[i])
-        console.log(`id do vendedor ${produtos[i].vendedor.id} paramito que o usuario procura ${id}`)
-        if (produtos[i].vendedor.id === id) {
-            // achou!    
-            console.log("achou")
-            cestoRoupa.push(produtos[i]);
-        }
-
-    }
-    return res.json({ mensage: cestoRoupa })
-})*/
-
-
-
-
-
-
 
 app.listen(3000)
