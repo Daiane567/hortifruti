@@ -8,7 +8,8 @@ function fazGet(url, nome) {
 function retornar(produtos) {
 
     return `
-    
+    <div class="card-group mb-12 " id="conteudo">
+
     <div class="card ">
     <img src="img/alface.png " class="card-img-top " alt="... ">
     <div class="card-body ">
@@ -19,32 +20,64 @@ function retornar(produtos) {
         <p class="card-text " id="nomeVendedor">${produtos.vendedor.nomeVendedor}</p>
         <p class="card-text " id="endereco">${produtos.vendedor.endereco}</p>
         <p class="card-text " id="cidade">${produtos.vendedor.cidade}</p>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${produtos.id}">
-  Launch demo modal
-</button>        
+        <a class="nav-link active" id="carrinhocompraa" aria-current="page"  title="Meus itens"> <input type="image" id="closef" src="img/carrinho.png" data-bs-toggle="modal" data-bs-target="#exampleModal0" /></a>
+        
         </div>
     </div>
-    
     <!-- Modal -->
-    <div class="modal fade" id="${produtos.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
+                <div class="modal fade" id="exampleModal0" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Escolha a quantidade desse item</p>
+                                <div class="row g-0">
+                                    <div class="col-sm-6 col-md-6"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa0I0eEe-gPBvfHzgCBSf-X-8WqD91612ePw&usqp=CAU" class="card-img-top" alt="..."></div>
+                                    <div class="col-6 col-md-4">
+                                        <h4 id="cor">${produtos.nome} </h4>
+                                    </div>
+                                    <div class="col-6 col-md-2">
+                                        <form id="frmNumber">
+                                            <div>
+                                                <label for="numero">Informe a quantidade:</label>
+                                                <input type="number" id="numero" name="numero" min="0" max="200">
+                                            </div>
+
+                                        </form>
+                                        <p id="resultado">
+                                            <div>
+                                                <label for="preco" class="col-form-label">R$${produtos.preco}</label>
+                                            </div>
+
+
+                                            <script>
+                                                document.getElementById("frmNumber").onsubmit = function() {
+                                                    let frmNr = document.getElementById('frmNumber').elements;
+                                                    document.getElementById("resultado").innerHTML = "Você digitou: " + frmNr['numero'].value;
+                                                    return false;
+                                                };
+                                            </script>
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn " id="botaooo" data-bs-dismiss="modal">Voltar</button>
+                                <button type="button" class="btn " id="botaoo">Adicionar ao carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
     </div>
+        
     
- </div>   
 `
 
 }
@@ -62,8 +95,9 @@ function main() { //pode ser qualquer nome
                 meuHtml += retornar(product);
             }
             let card = document.getElementById("conteudo")
+
             console.log(meuHtml)
-            card.innerHTML = ` <div class="card-group mb-12 " id="conteudo">${meuHtml}</div>`;
+            card.innerHTML = meuHtml;
         })
 
 
