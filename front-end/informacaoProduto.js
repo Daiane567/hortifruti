@@ -22,14 +22,15 @@ function cadastrar() {
     let quantidades = document.getElementById("quantidades").value;
 
     postData(`http://localhost:3000/produtos/` + id, {
-            nome: nome,
-            preco: preco,
-            descricao: descricao,
-            categoria: categoria,
-            medidas: medidas,
-            quantidades: quantidades,
-        })
-        .then((data) => {
+        nome: nome,
+        preco: preco,
+        descricao: descricao,
+        categoria: categoria,
+        medidas: medidas,
+        quantidades: quantidades,
+    })
+
+    .then((data) => {
             console.log(data);
         })
         .catch((error) => {

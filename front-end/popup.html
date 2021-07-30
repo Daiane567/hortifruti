@@ -18,26 +18,125 @@
   </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal -->
+
+    <div class="modal fade" id="modalNum${produtos.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h2 class="modal-title" id="exampleModalLabel">Confirmação</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <p>Escolha a quantidade desse item</p>
+                    <div class="container">
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+
+                        <div class="row g-0">
+                            <div class="col-sm-6 col-md-6">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa0I0eEe-gPBvfHzgCBSf-X-8WqD91612ePw&usqp=CAU" class="card-img-top" alt="...">
+                            </div>
+                            <div class="col-6 col-md-6">
+                                <p>${produtos.nome} </p>
+                                <p>
+                                    <form id="frmNumber">
+                                        <p>
+                                            <label for="numero">Informe a quantidade:</label>
+                                            <input type="number" id="numero" name="numero" min="0" max="200">
+                                        </p>
+
+                                    </form>
+                                </p>
+                                <p> <label for="preco" class="col-form-label">R$ ${produtos.preco}</label>
+                                    <script>
+                                        document.getElementById("frmNumber").onsubmit = function() {
+                                            let frmNr = document.getElementById('frmNumber').elements;
+                                            document.getElementById("resultado").innerHTML = "Você digitou: " + frmNr['numero'].value;
+                                            return false;
+                                        };
+                                    </script>
+                                </p>
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button onclick="window.location.href = 'carrinhoCompra.html'" id="botaoo">Adicionar ao carrinho</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `; } function main() { //pode ser qualquer nome fetch(`http://localhost:3000/ofertas`) .then((balinha) => balinha.json()) .then((data) => { const ofertas = document.getElementById("conteudo"); for (const product of data) { var div = document.createElement("div");
+                div.className = "card" div.innerHTML = cardsProduto(product); ofertas.appendChild(div); } }); } main(); function sectionProdutos(produtos) { console.log("building cards..."); return `
+                <div>
+                    <img src="img/alface.png " class="imgg " alt="... ">
+
+                    <p id="id">${produtos.id} </p>
+                    <h5 id="name">${produtos.nome} ${produtos.quantidades} ${produtos.medidas}</h5>
+                    <p id="preco">Preço: ${produtos.preco} </p>
+                    <p id="pagamentos">Forma de pagamento: ${produtos.vendedor.pagamento}</p>
+                    <p id="nomeVendedor">Vendedor: ${produtos.vendedor.nomeVendedor}</p>
+                    <p id="endereco">Endereço: ${produtos.vendedor.endereco}</p>
+                    <p id="cidade">Cidade: ${produtos.vendedor.cidade}</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNum${produtos.id}">Comprar</button>
+                    <div>
+
+                        <div class="modal " id="modalNum${produtos.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-header">
+
+                                    <!-- Cabeçalho do Modal -->
+                                    <div class="modal-header">
+
+                                        <h2>Confirmação</h2>
+                                        <p>Escolha a quantidade desse item</p>
+                                        <div class="row g-0">
+                                            <div class="col-sm-6 col-md-6"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa0I0eEe-gPBvfHzgCBSf-X-8WqD91612ePw&usqp=CAU" class="card-img-top" alt="..."></div>
+                                            <div class="col-6 col-md-2">${produtos.id}</div>
+                                            <div class="col-6 col-md-4">
+                                                <form id="frmNumber">
+                                                    <div>
+                                                        <label for="numero">Informe a quantidade:</label>
+                                                        <input type="number" id="numero" name="numero" min="0" max="200">
+                                                    </div>
+
+                                                </form>
+                                                <p id="resultado">
+                                                    <div>
+                                                        <label for="preco" class="col-form-label">${produtos.preco}</label>
+                                                    </div>
+
+
+                                                    <script>
+                                                        document.getElementById("frmNumber").onsubmit = function() {
+                                                            let frmNr = document.getElementById('frmNumber').elements;
+                                                            document.getElementById("resultado").innerHTML = "Você digitou: " + frmNr['numero'].value;
+                                                            return false;
+                                                        };
+                                                    </script>
+
+
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button class="btn " id="botaoo"> Adicionar ao carrinho </button>
+
+                                        <button class="btn " id="botaooo" data-dismiss="modal">voltar</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 </body>
 
 </html>

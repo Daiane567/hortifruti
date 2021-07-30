@@ -61,10 +61,8 @@ function retornar(produtos) {
                                       <div class="card-body" id="card">
                                           <h5 class="card-title">${produtos.nome} ${produtos.medidas}</h5>
                                           <p class="card-text">
-                                              <p id="nomeVendedor">vendedor:${produtos.vendedor.nomeVendedor} </p>
-                            
-                                          <p class="card-text " id="nomeVendedor">${produtos.vendedor.nomeVendedor}</p>
-                                          <p class="card-text " id="endereco">${produtos.vendedor.endereco}</p>
+                                         <p id="nomeVendedor">vendedor:${produtos.vendedor.nomeVendedor} </p>
+                                          <p class="card-text " id="endereco">Endereço:${produtos.vendedor.endereco}</p>
                                           <p class="card-text " id="cidade">${produtos.vendedor.cidade}</p>
 
                                           <p>Obs:  ${produtos.descricao} </p>
@@ -80,8 +78,8 @@ function retornar(produtos) {
                                   </div>
   
                                   <div class="col-6 col-md-3">
-                                      <label for="inputPassword6" class="col-form-label" id="preco">R$ ${produtos.preco}  </label>
-                                      <p id="p">  ${produtos.quantidade} </p>
+                                      <label for="inputPassword6" class="col-form-label" id="preco">Preço: R$ ${produtos.preco}  </label>
+                                      <p id="p"> Quantidade: ${produtos.quantidade} </p>
                                       <div class="dropdown" id="menu">
                                           <button class="btn bg dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                           

@@ -40,9 +40,25 @@ app.get('/ofertas', (req, res, next) => {
 app.get('/maisvendidos', (req, res, next) => {
 
 
-    next(res.json(produtos))
-})
+        next(res.json(produtos))
+    })
+    /*app.get('/legumesVerduras', (req, res, next) => {
 
+
+      next(res.json(produtos))
+    })
+
+    app.get('/laticiniosCongelados', (req, res, next) => {
+
+
+        next(res.json(produtos))
+    })
+
+    app.get('/biscoitos', (req, res, next) => {
+
+
+        next(res.json(produtos))
+    })*/
 app.post('/produtos/:idVendedor', (req, res) => {
     const idVendedor = parseInt(req.params['idVendedor'], 10)
     var vendedor;
