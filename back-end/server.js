@@ -1,5 +1,5 @@
 const cors = require('cors')
-
+const { readFile } = require('fs');
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
@@ -59,6 +59,18 @@ app.get('/maisvendidos', (req, res, next) => {
 
         next(res.json(produtos))
     })*/
+
+app.get('/base', (req, res, next) => {
+    const caminhoArquivo = './base.json';
+    readFile(caminhoArquivo, (err, data) /* callback */ => {
+        if (err) {
+            next(res.json("aqrivo não encontrado")).status(500);
+        }
+        next(res.json(data));
+
+    });
+
+})
 app.post('/produtos/:idVendedor', (req, res) => {
     const idVendedor = parseInt(req.params['idVendedor'], 10)
     var vendedor;
