@@ -345,3 +345,18 @@ tr {
     width: 100%;
     margin: 20%;
 }
+
+
+/*--barra de pesquisa*/
+
+#match-list {
+    z-index: 1;
+    position: absolute;
+}
+
+#matchi-list .card {
+    box-shadow: 3px 3px 3px #878787;
+}
+
+
+/*--barra de pesquisa*/

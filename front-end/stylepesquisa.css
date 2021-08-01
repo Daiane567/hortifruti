@@ -1,0 +1,12 @@
+body {
+    background-color: aliceblue;
+}
+
+#match-list {
+    z-index: 1;
+    position: absolute;
+}
+
+#matchi-list .card {
+    box-shadow: 3px 3px 3px #878787;
+}

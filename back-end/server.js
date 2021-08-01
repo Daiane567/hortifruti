@@ -40,37 +40,11 @@ app.get('/ofertas', (req, res, next) => {
 app.get('/maisvendidos', (req, res, next) => {
 
 
-        next(res.json(produtos))
-    })
-    /*app.get('/legumesVerduras', (req, res, next) => {
-
-
-      next(res.json(produtos))
-    })
-
-    app.get('/laticiniosCongelados', (req, res, next) => {
-
-
-        next(res.json(produtos))
-    })
-
-    app.get('/biscoitos', (req, res, next) => {
-
-
-        next(res.json(produtos))
-    })*/
-
-app.get('/base', (req, res, next) => {
-    const caminhoArquivo = './base.json';
-    readFile(caminhoArquivo, (err, data) /* callback */ => {
-        if (err) {
-            next(res.json("aqrivo não encontrado")).status(500);
-        }
-        next(res.json(data));
-
-    });
-
+    next(res.json(produtos))
 })
+
+
+
 app.post('/produtos/:idVendedor', (req, res) => {
     const idVendedor = parseInt(req.params['idVendedor'], 10)
     var vendedor;
