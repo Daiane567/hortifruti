@@ -24,6 +24,6 @@
 
 Segue também no github:
 https://github.com/kakacordovil
- ![DiagramaDeFluxo](https://user-images.githubusercontent.com/61097764/132763749-e55c0308-c594-4d42-b031-b5456f090bed.png)
+
 
 </div>
