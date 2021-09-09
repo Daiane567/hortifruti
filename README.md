@@ -21,7 +21,7 @@
    <a href="https://www.linkedin.com/in/daiane-rocha-0b2bb1202" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
  div align="center"
  
-  <img src="https://user-images.githubusercontent.com/61097764/132763749-e55c0308-c594-4d42-b031-b5456f090bed.png" width="300px" />
+  <img src="https://user-images.githubusercontent.com/61097764/132763749-e55c0308-c594-4d42-b031-b5456f090bed.png" width="700px" />
 /div
 
 
