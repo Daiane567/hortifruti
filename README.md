@@ -43,7 +43,7 @@ Conforme se pode ver na figura X mostra o diagrama de fluxo de interação do us
 Veja o exemplo de estrutura básica de um diagrama de fluxo centrado nas ações dos usuários: 
 
 
-|FLUXO DO USUÁRIO| DESCRIÇÃO | RF |
+|FLUXo DO USUÁRIO| DESCRIÇÃO | RF |
 |--|-------------------------------------------------------|----------------------|
 | Home | Na homepage da aplicação deve conter algumas notícias e informações úteis para o usuário ela também sera reponsavel por ligar as funcionalidades principal do sistema| RF-008 |
 |Cadastro de usuário | O usuário deve conseguir realizar um cadastro na aplicação dividido em pessoa fisica e pessoa jurídica | RF-002 |
