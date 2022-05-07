@@ -45,7 +45,7 @@ Veja o exemplo de estrutura básica de um diagrama de fluxo centrado nas ações
 
 |FLUXo DO USUÁRIO| DESCRIÇÃO | RF |
 |--|-------------------------------------------------------|----------------------|
-| Home | Na homepage da aplicação deve conter algumas notícias e informações úteis para o usuário ela também sera reponsavel por ligar as funcionalidades principal do sistema| RF-008 |
+| Home | Na homepage da aplicação deve ter algumas notícias e informações úteis para o usuário ela também sera reponsavel por ligar as funcionalidades principal do sistema| RF-008 |
 |Cadastro de usuário | O usuário deve conseguir realizar um cadastro na aplicação dividido em pessoa fisica e pessoa jurídica | RF-002 |
 |Solicitar coleta|O usuário deverá ter efetuado login, se não estiver logado a pagina devera solicitar login e senha  logo depois ira analisar se o email e senha são validos, se for sera redirecionado para mostrar pontos de coleta e visualisar materiais possiveis de descarte e então podera enviar sua solicitação de coleta, mas se o email e senha não for valido a pagina ira esperar 5/s e solicitar login novamente| RF-001 || RF-003|| RF-004| | RF-006 |
 |Acompanhar solicitação de coleta|O usuário ira clicar em acompanhar solicitação o sistema vai veriificar se está logado se sim sera redirecionado para mostar statatus de coleta mas se não estiver a pagina devera solicitar login e senha  logo depois ira analisar se o email e senha são validos, a pagina ira esperar 5/s e solicitar login novamente| RF-001 || RF-003 || RF-005 |
