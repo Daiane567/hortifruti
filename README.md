@@ -74,5 +74,4 @@ São protótipos usados em design de interface para sugerir a estrutura de um si
   
   https://user-images.githubusercontent.com/61097764/167247294-359b657b-2123-4862-ac30-a1ac45203134.mp4
 
-  [![video - Daiane](https://i9.ytimg.com/vi/lESesOVWiwg/mq2.jpg?sqp=CMT62JMG&rs=AOn4CLAmyfG1mwlfGKUs1Cl6FrXOzo68QQ)](https://youtu.be/Qumu-fP9JKQ)
 
