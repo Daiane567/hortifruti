@@ -1,4 +1,5 @@
 # hortifruti
+![Exemplo de matriz de rastreabilidade](img/matrizDeRastreabilidade.png)
 -site hortifruti
 ##Olá! Eu sou a Daiane Rocha seja bem vindo ao meu site😊
 - 👩‍🏫Estou trabanhando em um projeto pessoal no momento             
