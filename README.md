@@ -1,6 +1,6 @@
 # hortifruti
 -site hortifruti
-##Olá! Eu sou a Daiane Rocha seja bem vindo😊
+##Olá! Eu sou a Daiane Rocha seja bem vindo ao meu site😊
 - 👩‍🏫Estou trabanhando em um projeto pessoal no momento             
 <div>
   <a href="https://github.com/Daiane567">
