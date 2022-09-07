@@ -1,5 +1,5 @@
 # hortifruti
-![Exemplo de matriz de rastreabilidade](<img width="527" alt="matrizDeRastreabilidade" src="https://user-images.githubusercontent.com/61097764/188893310-a1b50d0e-673d-418d-b681-bd16c0aba811.png">)
+![Exemplo de matriz de rastreabilidade] <img width="527" alt="matrizDeRastreabilidade" src="https://user-images.githubusercontent.com/61097764/188893310-a1b50d0e-673d-418d-b681-bd16c0aba811.png">
 -site hortifruti
 ##Olá! Eu sou a Daiane Rocha seja bem vindo ao meu site😊
 - 👩‍🏫Estou trabanhando em um projeto pessoal no momento             
