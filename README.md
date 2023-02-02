@@ -29,9 +29,5 @@ https://github.com/kakacordovil
 
 </div>
   
-  https://user-images.githubusercontent.com/61097764/167248022-bda9a574-c053-439d-a435-b51002d46a2c.mp4
-
   
-  https://user-images.githubusercontent.com/61097764/167247294-359b657b-2123-4862-ac30-a1ac45203134.mp4
-
 
