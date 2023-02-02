@@ -20,12 +20,6 @@
  
 <div> 
    <a href="https://www.linkedin.com/in/daiane-rocha-0b2bb1202" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
- 
-
-
-Segue também no github:
-https://github.com/kakacordovil
-
 
 </div>
   
